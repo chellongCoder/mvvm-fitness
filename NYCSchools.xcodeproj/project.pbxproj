@@ -3,19 +3,45 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C4196F728A18B55009379A1 /* DataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4196F628A18B55009379A1 /* DataError.swift */; };
+		2C4196FA28A18F85009379A1 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4196F928A18F85009379A1 /* School.swift */; };
 		2C7C4C8B289890F400860F05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7C4C8A289890F400860F05 /* AppDelegate.swift */; };
 		2C7C4C8D289890F400860F05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7C4C8C289890F400860F05 /* SceneDelegate.swift */; };
-		2C7C4C8F289890F400860F05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7C4C8E289890F400860F05 /* ViewController.swift */; };
+		2C7C4C8F289890F400860F05 /* SchoolsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7C4C8E289890F400860F05 /* SchoolsCollectionViewController.swift */; };
 		2C7C4C92289890F400860F05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C7C4C90289890F400860F05 /* Main.storyboard */; };
 		2C7C4C94289890F600860F05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C7C4C93289890F600860F05 /* Assets.xcassets */; };
 		2C7C4C97289890F600860F05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C7C4C95289890F600860F05 /* LaunchScreen.storyboard */; };
 		2C7C4CA2289890F600860F05 /* NYCSchoolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7C4CA1289890F600860F05 /* NYCSchoolsTests.swift */; };
 		2C7C4CAC289890F600860F05 /* NYCSchoolsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7C4CAB289890F600860F05 /* NYCSchoolsUITests.swift */; };
 		2C7C4CAE289890F600860F05 /* NYCSchoolsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7C4CAD289890F600860F05 /* NYCSchoolsUITestsLaunchTests.swift */; };
+		2C84BA1B28A9BA95005AAD38 /* SchoolSAT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84BA1A28A9BA95005AAD38 /* SchoolSAT.swift */; };
+		2C84BA1D28A9BC61005AAD38 /* SchoolSATDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C84BA1C28A9BC61005AAD38 /* SchoolSATDetailsCollectionViewCell.swift */; };
+		2C8C995228A8C83A00DDB59A /* SchoolListStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8C995128A8C83A00DDB59A /* SchoolListStateView.swift */; };
+		2CA789FA28A2F0D000274FE8 /* SchoolsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA789F928A2F0D000274FE8 /* SchoolsViewModel.swift */; };
+		2CB6931A28A38043007E46D8 /* MockSchoolAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB6931928A38043007E46D8 /* MockSchoolAPI.swift */; };
+		2CB6931C28A380B0007E46D8 /* SchoolListLoadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB6931B28A380B0007E46D8 /* SchoolListLoadState.swift */; };
+		2CC9E4A928A99399006E838A /* SchoolDetails_with_SAT.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CC9E4A828A99399006E838A /* SchoolDetails_with_SAT.png */; };
+		2CCD9A2328A462E600FAE7A5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CCD9A2228A462E600FAE7A5 /* Localizable.strings */; };
+		2CCD9A2728A4637B00FAE7A5 /* StringsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCD9A2628A4637B00FAE7A5 /* StringsHelper.swift */; };
+		2CE02BA428A17F65009C94FA /* SchoolDirectoryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE02BA328A17F65009C94FA /* SchoolDirectoryAPI.swift */; };
+		2CF32AF128AA125C00FA5AD8 /* SchoolDetailsMapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF32AF028AA125C00FA5AD8 /* SchoolDetailsMapCollectionViewCell.swift */; };
+		2CF32AF328AA12D000FA5AD8 /* SchoolMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF32AF228AA12D000FA5AD8 /* SchoolMapAnnotation.swift */; };
+		2CFCEB1E28A4666C00B892F4 /* SchoolsList.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CFCEB1D28A4666C00B892F4 /* SchoolsList.png */; };
+		2CFCEB2028A4A6F700B892F4 /* SchoolCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFCEB1F28A4A6F700B892F4 /* SchoolCollectionViewCell.swift */; };
+		2CFCEB2228A5EE3B00B892F4 /* SchoolsSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFCEB2128A5EE3B00B892F4 /* SchoolsSectionHeaderView.swift */; };
+		2CFCEB2528A5F6DB00B892F4 /* SchoolSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFCEB2428A5F6DB00B892F4 /* SchoolSection.swift */; };
+		2CFCEB2728A6C29C00B892F4 /* SchoolDetails.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CFCEB2628A6C29C00B892F4 /* SchoolDetails.png */; };
+		2CFCEB2928A6E4BF00B892F4 /* SchoolDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFCEB2828A6E4BF00B892F4 /* SchoolDetailsViewController.swift */; };
+		2CFCEB2B28A6E55800B892F4 /* SchoolDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFCEB2A28A6E55800B892F4 /* SchoolDetailsCollectionViewCell.swift */; };
+		2CFCEB2D28A6E5A100B892F4 /* SchoolDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFCEB2C28A6E5A100B892F4 /* SchoolDetailsViewModel.swift */; };
+		7CCD202E13465AD4734C96D0 /* Pods_NYCSchools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C81804BD2E2B203991EFB043 /* Pods_NYCSchools.framework */; };
+		8BC27D014797DFF253D98B2E /* Pods_NYCSchools_NYCSchoolsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 309D7DC55C03C0EDC97944F5 /* Pods_NYCSchools_NYCSchoolsUITests.framework */; };
+		C4E14729820FF3C8D5897EFE /* Pods_NYCSchoolsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781FD6C272636B793B34F23D /* Pods_NYCSchoolsTests.framework */; };
+		DEE36D752C89B5A000856DE3 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE36D742C89B5A000856DE3 /* CalendarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +62,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2BD29FA934322713674DCE1E /* Pods-NYCSchools-NYCSchoolsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYCSchools-NYCSchoolsUITests.release.xcconfig"; path = "Target Support Files/Pods-NYCSchools-NYCSchoolsUITests/Pods-NYCSchools-NYCSchoolsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2C4196F628A18B55009379A1 /* DataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataError.swift; sourceTree = "<group>"; };
+		2C4196F928A18F85009379A1 /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
 		2C7C4C87289890F400860F05 /* NYCSchools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYCSchools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C7C4C8A289890F400860F05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C7C4C8C289890F400860F05 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2C7C4C8E289890F400860F05 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2C7C4C8E289890F400860F05 /* SchoolsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsCollectionViewController.swift; sourceTree = "<group>"; };
 		2C7C4C91289890F400860F05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2C7C4C93289890F600860F05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C7C4C96289890F600860F05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +78,35 @@
 		2C7C4CA7289890F600860F05 /* NYCSchoolsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NYCSchoolsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C7C4CAB289890F600860F05 /* NYCSchoolsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolsUITests.swift; sourceTree = "<group>"; };
 		2C7C4CAD289890F600860F05 /* NYCSchoolsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYCSchoolsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2C84BA1A28A9BA95005AAD38 /* SchoolSAT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolSAT.swift; sourceTree = "<group>"; };
+		2C84BA1C28A9BC61005AAD38 /* SchoolSATDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolSATDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
+		2C8C995128A8C83A00DDB59A /* SchoolListStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolListStateView.swift; sourceTree = "<group>"; };
+		2CA1C52D692E385A36183B1A /* Pods-NYCSchoolsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYCSchoolsTests.release.xcconfig"; path = "Target Support Files/Pods-NYCSchoolsTests/Pods-NYCSchoolsTests.release.xcconfig"; sourceTree = "<group>"; };
+		2CA789F928A2F0D000274FE8 /* SchoolsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsViewModel.swift; sourceTree = "<group>"; };
+		2CB6931928A38043007E46D8 /* MockSchoolAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSchoolAPI.swift; sourceTree = "<group>"; };
+		2CB6931B28A380B0007E46D8 /* SchoolListLoadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolListLoadState.swift; sourceTree = "<group>"; };
+		2CC9E4A828A99399006E838A /* SchoolDetails_with_SAT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SchoolDetails_with_SAT.png; sourceTree = "<group>"; };
+		2CCD9A2228A462E600FAE7A5 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		2CCD9A2628A4637B00FAE7A5 /* StringsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsHelper.swift; sourceTree = "<group>"; };
+		2CE02BA328A17F65009C94FA /* SchoolDirectoryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolDirectoryAPI.swift; sourceTree = "<group>"; };
+		2CF32AF028AA125C00FA5AD8 /* SchoolDetailsMapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolDetailsMapCollectionViewCell.swift; sourceTree = "<group>"; };
+		2CF32AF228AA12D000FA5AD8 /* SchoolMapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolMapAnnotation.swift; sourceTree = "<group>"; };
+		2CFCEB1D28A4666C00B892F4 /* SchoolsList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SchoolsList.png; sourceTree = "<group>"; };
+		2CFCEB1F28A4A6F700B892F4 /* SchoolCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolCollectionViewCell.swift; sourceTree = "<group>"; };
+		2CFCEB2128A5EE3B00B892F4 /* SchoolsSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsSectionHeaderView.swift; sourceTree = "<group>"; };
+		2CFCEB2428A5F6DB00B892F4 /* SchoolSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolSection.swift; sourceTree = "<group>"; };
+		2CFCEB2628A6C29C00B892F4 /* SchoolDetails.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SchoolDetails.png; sourceTree = "<group>"; };
+		2CFCEB2828A6E4BF00B892F4 /* SchoolDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolDetailsViewController.swift; sourceTree = "<group>"; };
+		2CFCEB2A28A6E55800B892F4 /* SchoolDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
+		2CFCEB2C28A6E5A100B892F4 /* SchoolDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolDetailsViewModel.swift; sourceTree = "<group>"; };
+		309D7DC55C03C0EDC97944F5 /* Pods_NYCSchools_NYCSchoolsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYCSchools_NYCSchoolsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		35C3A8DDBEED8B2D99697771 /* Pods-NYCSchools-NYCSchoolsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYCSchools-NYCSchoolsUITests.debug.xcconfig"; path = "Target Support Files/Pods-NYCSchools-NYCSchoolsUITests/Pods-NYCSchools-NYCSchoolsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		388B3C7254644E0397AD448D /* Pods-NYCSchools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYCSchools.release.xcconfig"; path = "Target Support Files/Pods-NYCSchools/Pods-NYCSchools.release.xcconfig"; sourceTree = "<group>"; };
+		781FD6C272636B793B34F23D /* Pods_NYCSchoolsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYCSchoolsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A49D384D60D5274C7E838063 /* Pods-NYCSchools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYCSchools.debug.xcconfig"; path = "Target Support Files/Pods-NYCSchools/Pods-NYCSchools.debug.xcconfig"; sourceTree = "<group>"; };
+		C81804BD2E2B203991EFB043 /* Pods_NYCSchools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYCSchools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB20FCA52DE84EDA99F2B26E /* Pods-NYCSchoolsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYCSchoolsTests.debug.xcconfig"; path = "Target Support Files/Pods-NYCSchoolsTests/Pods-NYCSchoolsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DEE36D742C89B5A000856DE3 /* CalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CCD202E13465AD4734C96D0 /* Pods_NYCSchools.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4E14729820FF3C8D5897EFE /* Pods_NYCSchoolsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +130,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BC27D014797DFF253D98B2E /* Pods_NYCSchools_NYCSchoolsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C4196F828A18F68009379A1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2C4196F928A18F85009379A1 /* School.swift */,
+				2CB6931B28A380B0007E46D8 /* SchoolListLoadState.swift */,
+				2C84BA1A28A9BA95005AAD38 /* SchoolSAT.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		2C7C4C7E289890F400860F05 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +154,8 @@
 				2C7C4CA0289890F600860F05 /* NYCSchoolsTests */,
 				2C7C4CAA289890F600860F05 /* NYCSchoolsUITests */,
 				2C7C4C88289890F400860F05 /* Products */,
+				8CF797467851D316F1B336A4 /* Pods */,
+				DB5B4DF874709E8ADDEB65EE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,10 +172,10 @@
 		2C7C4C89289890F400860F05 /* NYCSchools */ = {
 			isa = PBXGroup;
 			children = (
+				2C7C4CBA289DC00200860F05 /* App */,
+				2CCD9A2428A4630500FAE7A5 /* Supporting */,
 				2C7C4C8A289890F400860F05 /* AppDelegate.swift */,
 				2C7C4C8C289890F400860F05 /* SceneDelegate.swift */,
-				2C7C4C8E289890F400860F05 /* ViewController.swift */,
-				2C7C4C90289890F400860F05 /* Main.storyboard */,
 				2C7C4C93289890F600860F05 /* Assets.xcassets */,
 				2C7C4C95289890F600860F05 /* LaunchScreen.storyboard */,
 				2C7C4C98289890F600860F05 /* Info.plist */,
@@ -114,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				2C7C4CA1289890F600860F05 /* NYCSchoolsTests.swift */,
+				2CB6931928A38043007E46D8 /* MockSchoolAPI.swift */,
 			);
 			path = NYCSchoolsTests;
 			sourceTree = "<group>";
@@ -127,6 +201,137 @@
 			path = NYCSchoolsUITests;
 			sourceTree = "<group>";
 		};
+		2C7C4CBA289DC00200860F05 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2C7C4CBD289DC0A900860F05 /* UI Layer */,
+				2C7C4CBC289DC02900860F05 /* Data Layer */,
+				2CCD9A2528A4636200FAE7A5 /* Utility */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		2C7C4CBB289DC01C00860F05 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				2CE02BA328A17F65009C94FA /* SchoolDirectoryAPI.swift */,
+				2C4196F628A18B55009379A1 /* DataError.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		2C7C4CBC289DC02900860F05 /* Data Layer */ = {
+			isa = PBXGroup;
+			children = (
+				2C4196F828A18F68009379A1 /* Models */,
+				2C7C4CBB289DC01C00860F05 /* Networking */,
+			);
+			path = "Data Layer";
+			sourceTree = "<group>";
+		};
+		2C7C4CBD289DC0A900860F05 /* UI Layer */ = {
+			isa = PBXGroup;
+			children = (
+				2CFCEB2328A5F6CF00B892F4 /* Models */,
+				2CA789F828A2F0BD00274FE8 /* View Models */,
+				2C7C4CC0289DC0DD00860F05 /* Storyboards */,
+				2C7C4CBF289DC0C400860F05 /* Views */,
+				2C7C4CBE289DC0B500860F05 /* View Controllers */,
+			);
+			path = "UI Layer";
+			sourceTree = "<group>";
+		};
+		2C7C4CBE289DC0B500860F05 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2C7C4C8E289890F400860F05 /* SchoolsCollectionViewController.swift */,
+				2CFCEB2828A6E4BF00B892F4 /* SchoolDetailsViewController.swift */,
+				DEE36D742C89B5A000856DE3 /* CalendarController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		2C7C4CBF289DC0C400860F05 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2CFCEB1F28A4A6F700B892F4 /* SchoolCollectionViewCell.swift */,
+				2CFCEB2128A5EE3B00B892F4 /* SchoolsSectionHeaderView.swift */,
+				2CFCEB2A28A6E55800B892F4 /* SchoolDetailsCollectionViewCell.swift */,
+				2C8C995128A8C83A00DDB59A /* SchoolListStateView.swift */,
+				2C84BA1C28A9BC61005AAD38 /* SchoolSATDetailsCollectionViewCell.swift */,
+				2CF32AF028AA125C00FA5AD8 /* SchoolDetailsMapCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2C7C4CC0289DC0DD00860F05 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				2C7C4C90289890F400860F05 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		2CA789F828A2F0BD00274FE8 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				2CA789F928A2F0D000274FE8 /* SchoolsViewModel.swift */,
+				2CFCEB2C28A6E5A100B892F4 /* SchoolDetailsViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		2CCD9A2428A4630500FAE7A5 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				2CC9E4A828A99399006E838A /* SchoolDetails_with_SAT.png */,
+				2CFCEB2628A6C29C00B892F4 /* SchoolDetails.png */,
+				2CFCEB1D28A4666C00B892F4 /* SchoolsList.png */,
+				2CCD9A2228A462E600FAE7A5 /* Localizable.strings */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		2CCD9A2528A4636200FAE7A5 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				2CCD9A2628A4637B00FAE7A5 /* StringsHelper.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		2CFCEB2328A5F6CF00B892F4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2CFCEB2428A5F6DB00B892F4 /* SchoolSection.swift */,
+				2CF32AF228AA12D000FA5AD8 /* SchoolMapAnnotation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8CF797467851D316F1B336A4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A49D384D60D5274C7E838063 /* Pods-NYCSchools.debug.xcconfig */,
+				388B3C7254644E0397AD448D /* Pods-NYCSchools.release.xcconfig */,
+				35C3A8DDBEED8B2D99697771 /* Pods-NYCSchools-NYCSchoolsUITests.debug.xcconfig */,
+				2BD29FA934322713674DCE1E /* Pods-NYCSchools-NYCSchoolsUITests.release.xcconfig */,
+				DB20FCA52DE84EDA99F2B26E /* Pods-NYCSchoolsTests.debug.xcconfig */,
+				2CA1C52D692E385A36183B1A /* Pods-NYCSchoolsTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DB5B4DF874709E8ADDEB65EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C81804BD2E2B203991EFB043 /* Pods_NYCSchools.framework */,
+				309D7DC55C03C0EDC97944F5 /* Pods_NYCSchools_NYCSchoolsUITests.framework */,
+				781FD6C272636B793B34F23D /* Pods_NYCSchoolsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +339,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C7C4CB1289890F600860F05 /* Build configuration list for PBXNativeTarget "NYCSchools" */;
 			buildPhases = (
+				6F1ABBA31F7CCACC507D2CD9 /* [CP] Check Pods Manifest.lock */,
 				2C7C4C83289890F400860F05 /* Sources */,
 				2C7C4C84289890F400860F05 /* Frameworks */,
 				2C7C4C85289890F400860F05 /* Resources */,
+				EE523EDC5EA31AB87B14A30E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,6 +358,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C7C4CB4289890F600860F05 /* Build configuration list for PBXNativeTarget "NYCSchoolsTests" */;
 			buildPhases = (
+				ACEAAB3C41E07B1D39897561 /* [CP] Check Pods Manifest.lock */,
 				2C7C4C99289890F600860F05 /* Sources */,
 				2C7C4C9A289890F600860F05 /* Frameworks */,
 				2C7C4C9B289890F600860F05 /* Resources */,
@@ -169,9 +377,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C7C4CB7289890F600860F05 /* Build configuration list for PBXNativeTarget "NYCSchoolsUITests" */;
 			buildPhases = (
+				919C1AEE7AB2CA11BB489F44 /* [CP] Check Pods Manifest.lock */,
 				2C7C4CA3289890F600860F05 /* Sources */,
 				2C7C4CA4289890F600860F05 /* Frameworks */,
 				2C7C4CA5289890F600860F05 /* Resources */,
+				E4FA7B81B921A20D70CDF9B0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -207,7 +417,7 @@
 				};
 			};
 			buildConfigurationList = 2C7C4C82289890F400860F05 /* Build configuration list for PBXProject "NYCSchools" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -231,7 +441,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CC9E4A928A99399006E838A /* SchoolDetails_with_SAT.png in Resources */,
 				2C7C4C97289890F600860F05 /* LaunchScreen.storyboard in Resources */,
+				2CCD9A2328A462E600FAE7A5 /* Localizable.strings in Resources */,
+				2CFCEB2728A6C29C00B892F4 /* SchoolDetails.png in Resources */,
+				2CFCEB1E28A4666C00B892F4 /* SchoolsList.png in Resources */,
 				2C7C4C94289890F600860F05 /* Assets.xcassets in Resources */,
 				2C7C4C92289890F400860F05 /* Main.storyboard in Resources */,
 			);
@@ -253,13 +467,134 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6F1ABBA31F7CCACC507D2CD9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NYCSchools-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		919C1AEE7AB2CA11BB489F44 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NYCSchools-NYCSchoolsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ACEAAB3C41E07B1D39897561 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NYCSchoolsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4FA7B81B921A20D70CDF9B0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NYCSchools-NYCSchoolsUITests/Pods-NYCSchools-NYCSchoolsUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NYCSchools-NYCSchoolsUITests/Pods-NYCSchools-NYCSchoolsUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NYCSchools-NYCSchoolsUITests/Pods-NYCSchools-NYCSchoolsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE523EDC5EA31AB87B14A30E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NYCSchools/Pods-NYCSchools-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NYCSchools/Pods-NYCSchools-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NYCSchools/Pods-NYCSchools-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2C7C4C83289890F400860F05 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C7C4C8F289890F400860F05 /* ViewController.swift in Sources */,
+				2C4196F728A18B55009379A1 /* DataError.swift in Sources */,
+				2C4196FA28A18F85009379A1 /* School.swift in Sources */,
+				2CA789FA28A2F0D000274FE8 /* SchoolsViewModel.swift in Sources */,
+				2C7C4C8F289890F400860F05 /* SchoolsCollectionViewController.swift in Sources */,
+				2C8C995228A8C83A00DDB59A /* SchoolListStateView.swift in Sources */,
+				2CFCEB2928A6E4BF00B892F4 /* SchoolDetailsViewController.swift in Sources */,
+				2C84BA1D28A9BC61005AAD38 /* SchoolSATDetailsCollectionViewCell.swift in Sources */,
 				2C7C4C8B289890F400860F05 /* AppDelegate.swift in Sources */,
+				2CCD9A2728A4637B00FAE7A5 /* StringsHelper.swift in Sources */,
+				2CFCEB2228A5EE3B00B892F4 /* SchoolsSectionHeaderView.swift in Sources */,
+				DEE36D752C89B5A000856DE3 /* CalendarController.swift in Sources */,
+				2CFCEB2D28A6E5A100B892F4 /* SchoolDetailsViewModel.swift in Sources */,
+				2CF32AF128AA125C00FA5AD8 /* SchoolDetailsMapCollectionViewCell.swift in Sources */,
+				2CFCEB2528A5F6DB00B892F4 /* SchoolSection.swift in Sources */,
+				2CFCEB2028A4A6F700B892F4 /* SchoolCollectionViewCell.swift in Sources */,
+				2CB6931C28A380B0007E46D8 /* SchoolListLoadState.swift in Sources */,
+				2CFCEB2B28A6E55800B892F4 /* SchoolDetailsCollectionViewCell.swift in Sources */,
+				2C84BA1B28A9BA95005AAD38 /* SchoolSAT.swift in Sources */,
+				2CF32AF328AA12D000FA5AD8 /* SchoolMapAnnotation.swift in Sources */,
+				2CE02BA428A17F65009C94FA /* SchoolDirectoryAPI.swift in Sources */,
 				2C7C4C8D289890F400860F05 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,6 +603,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CB6931A28A38043007E46D8 /* MockSchoolAPI.swift in Sources */,
 				2C7C4CA2289890F600860F05 /* NYCSchoolsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,7 +702,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -420,7 +756,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -432,6 +768,7 @@
 		};
 		2C7C4CB2289890F600860F05 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A49D384D60D5274C7E838063 /* Pods-NYCSchools.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -444,6 +781,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,6 +797,7 @@
 		};
 		2C7C4CB3289890F600860F05 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 388B3C7254644E0397AD448D /* Pods-NYCSchools.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -471,6 +810,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -486,6 +826,7 @@
 		};
 		2C7C4CB5289890F600860F05 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB20FCA52DE84EDA99F2B26E /* Pods-NYCSchoolsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -505,6 +846,7 @@
 		};
 		2C7C4CB6289890F600860F05 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CA1C52D692E385A36183B1A /* Pods-NYCSchoolsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -524,6 +866,7 @@
 		};
 		2C7C4CB8289890F600860F05 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35C3A8DDBEED8B2D99697771 /* Pods-NYCSchools-NYCSchoolsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -541,6 +884,7 @@
 		};
 		2C7C4CB9289890F600860F05 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BD29FA934322713674DCE1E /* Pods-NYCSchools-NYCSchoolsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -6,10 +6,13 @@
 //
 
 import XCTest
+import Combine
 @testable import NYCSchools
+
 
 final class NYCSchoolsTests: XCTestCase {
 
+    private var cancellables = Set<AnyCancellable>()
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -18,19 +21,86 @@ final class NYCSchoolsTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    override func setUp() async throws {
+        try await super.setUp()
+        cancellables.removeAll()
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testGettingSchoolsWithMockEmptyResult() {
+        let expectation = expectation(description: "testing empty state with mock api")
+        
+        let mockAPI = MockSchoolAPI()
+        mockAPI.loadState = .empty
+        
+        let viewModel = SchoolsViewModel(apiService: mockAPI)
+        viewModel.getSchools()
+        
+        viewModel.$schools
+            .receive(on: RunLoop.main)
+            .sink { schools in
+                guard let schools = schools else {
+                    XCTFail("expected to get schools")
+                    return
+                }
+                XCTAssertTrue(schools.isEmpty == true, "Expected schools to be empty, but received some values")
+                expectation.fulfill()
+            }
+            .store(in: &cancellables)
+        
+        waitForExpectations(timeout: 1.0) { error in
+            if let error = error {
+                XCTFail("Expectation failed \(error)")
+            }
         }
     }
-
+    
+    func testGettingSchoolsWithErrorResult() {
+        let expectation = expectation(description: "testing error state with mock api")
+        
+        let mockAPI = MockSchoolAPI()
+        mockAPI.loadState = .error
+        
+        let viewModel = SchoolsViewModel(apiService: mockAPI)
+        viewModel.getSchools()
+        viewModel.$error
+            .receive(on: RunLoop.main)
+            .sink{ error in
+                XCTAssertNotNil(error, "Expected to get an error, but received no error")
+                expectation.fulfill()
+            }
+            .store(in: &cancellables)
+        
+        waitForExpectations(timeout: 1.0) { error in
+            if let error = error {
+                XCTFail("Expectation failed \(error)")
+            }
+        }
+    }
+    
+    func testGettingSchoolsWithSuccess() {
+        let expectation = expectation(description: "testing success state with mock api")
+        let mockAPI = MockSchoolAPI()
+        mockAPI.loadState = .loaded
+        
+        let viewModel = SchoolsViewModel(apiService: mockAPI)
+        viewModel.getSchools()
+        
+        viewModel.$schools
+            .receive(on: RunLoop.main)
+            .sink { schools in
+                guard let schools = schools else {
+                    XCTFail("Did not get any values")
+                    return
+                }
+                XCTAssert(schools.isEmpty == false, "Expected to get schools")
+                expectation.fulfill()
+            }
+            .store(in: &cancellables)
+        
+        waitForExpectations(timeout: 1.0) { error in
+            if let error = error {
+                XCTFail("Expectation failed \(error)")
+            }
+        }
+    }
 }
