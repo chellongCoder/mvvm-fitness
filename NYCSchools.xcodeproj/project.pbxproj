@@ -42,6 +42,8 @@
 		8BC27D014797DFF253D98B2E /* Pods_NYCSchools_NYCSchoolsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 309D7DC55C03C0EDC97944F5 /* Pods_NYCSchools_NYCSchoolsUITests.framework */; };
 		C4E14729820FF3C8D5897EFE /* Pods_NYCSchoolsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781FD6C272636B793B34F23D /* Pods_NYCSchoolsTests.framework */; };
 		DEE36D752C89B5A000856DE3 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE36D742C89B5A000856DE3 /* CalendarController.swift */; };
+		DEE36D782C8AB0CE00856DE3 /* CalendarSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE36D772C8AB0CE00856DE3 /* CalendarSectionHeaderView.swift */; };
+		DEE36D7A2C8B05B900856DE3 /* ActivityViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE36D792C8B05B900856DE3 /* ActivityViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +109,8 @@
 		C81804BD2E2B203991EFB043 /* Pods_NYCSchools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYCSchools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB20FCA52DE84EDA99F2B26E /* Pods-NYCSchoolsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYCSchoolsTests.debug.xcconfig"; path = "Target Support Files/Pods-NYCSchoolsTests/Pods-NYCSchoolsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DEE36D742C89B5A000856DE3 /* CalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
+		DEE36D772C8AB0CE00856DE3 /* CalendarSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarSectionHeaderView.swift; sourceTree = "<group>"; };
+		DEE36D792C8B05B900856DE3 /* ActivityViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +258,7 @@
 		2C7C4CBF289DC0C400860F05 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DEE36D762C8AB0AC00856DE3 /* Calendar Components */,
 				2CFCEB1F28A4A6F700B892F4 /* SchoolCollectionViewCell.swift */,
 				2CFCEB2128A5EE3B00B892F4 /* SchoolsSectionHeaderView.swift */,
 				2CFCEB2A28A6E55800B892F4 /* SchoolDetailsCollectionViewCell.swift */,
@@ -330,6 +335,15 @@
 				781FD6C272636B793B34F23D /* Pods_NYCSchoolsTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DEE36D762C8AB0AC00856DE3 /* Calendar Components */ = {
+			isa = PBXGroup;
+			children = (
+				DEE36D772C8AB0CE00856DE3 /* CalendarSectionHeaderView.swift */,
+				DEE36D792C8B05B900856DE3 /* ActivityViewCell.swift */,
+			);
+			path = "Calendar Components";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -578,9 +592,11 @@
 				2C4196F728A18B55009379A1 /* DataError.swift in Sources */,
 				2C4196FA28A18F85009379A1 /* School.swift in Sources */,
 				2CA789FA28A2F0D000274FE8 /* SchoolsViewModel.swift in Sources */,
+				DEE36D782C8AB0CE00856DE3 /* CalendarSectionHeaderView.swift in Sources */,
 				2C7C4C8F289890F400860F05 /* SchoolsCollectionViewController.swift in Sources */,
 				2C8C995228A8C83A00DDB59A /* SchoolListStateView.swift in Sources */,
 				2CFCEB2928A6E4BF00B892F4 /* SchoolDetailsViewController.swift in Sources */,
+				DEE36D7A2C8B05B900856DE3 /* ActivityViewCell.swift in Sources */,
 				2C84BA1D28A9BC61005AAD38 /* SchoolSATDetailsCollectionViewCell.swift in Sources */,
 				2C7C4C8B289890F400860F05 /* AppDelegate.swift in Sources */,
 				2CCD9A2728A4637B00FAE7A5 /* StringsHelper.swift in Sources */,

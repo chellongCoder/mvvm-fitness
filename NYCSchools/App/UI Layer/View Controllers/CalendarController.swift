@@ -10,7 +10,21 @@ import UIKit
 
 class CalendarController: UIViewController {
     private var collectionView: UICollectionView!
+    private var listView: UITableView!
+    struct ActivityItem {
+        let activity: String
+        let imageName: String
+    }
+    // Data source array
+    var items: [ActivityItem] = [] // Populate this array with your data
+    private var collectionViewHeightConstraint: NSLayoutConstraint!
 
+    private struct Constants {
+        static let cellIdentifier: String = "activityCell"
+        static let cellHeight: CGFloat = 100
+        static let sectionHeaderIdentifier: String = "sectionHeader"
+        static let sectionHeight: CGFloat = 50
+    }
     private var titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "HelveticaNeue-Bold", size: 18)
@@ -22,8 +36,20 @@ class CalendarController: UIViewController {
         navigationItem.title = "Activity"
         view.backgroundColor = .white
         
+        // Populate the items array
+        items = [
+            ActivityItem(activity: "Running", imageName: "running_icon"),
+            ActivityItem(activity: "Swimming", imageName: "swimming_icon"),
+            ActivityItem(activity: "Cycling", imageName: "cycling_icon")
+        ]
+        
         setupHeaderView()
         setupCalendarView()
+        setupListView()
+
+        // Calculate and set the height of the collectionView
+        updateCollectionViewHeight()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -121,7 +147,7 @@ extension CalendarController: UICollectionViewDataSource, UICollectionViewDelega
         // Create collection view
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .red
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
@@ -137,6 +163,9 @@ extension CalendarController: UICollectionViewDataSource, UICollectionViewDelega
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+        collectionViewHeightConstraint = collectionView.heightAnchor.constraint(equalToConstant: 0)
+        collectionViewHeightConstraint.isActive = true
+
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -205,5 +234,66 @@ extension CalendarController: UICollectionViewDataSource, UICollectionViewDelega
         }
     }
     
-    
 }
+
+extension CalendarController : UITableViewDataSource, UITableViewDelegate{
+    private func updateCollectionViewHeight() {
+        let totalHeight = Constants.cellHeight * CGFloat(items.count)
+        collectionViewHeightConstraint.constant = totalHeight
+        view.layoutIfNeeded()
+    }
+
+    private func setupListView()  {
+        // Create list view
+        listView = UITableView()
+        listView.translatesAutoresizingMaskIntoConstraints = false
+        listView.dataSource = self
+        listView.delegate = self
+        listView.register(ActivityViewCell.self, forCellReuseIdentifier: "ActivityViewCell")
+        view.addSubview(listView)
+        
+        // Add constraints
+        listView.autoPinEdge(.top, to: .bottom, of: collectionView, withOffset: 8)
+        listView.autoPinEdge(toSuperviewEdge: .leading)
+        listView.autoPinEdge(toSuperviewEdge: .trailing)
+        listView.autoPinEdge(toSuperviewEdge: .bottom)
+        
+        // collectionView.register(SchoolCollectionViewCell.self,
+        //                         forCellWithReuseIdentifier: Constants.cellIdentifier)
+        // collectionView.register(ActivityCollectionViewHeader.self,
+        //                         forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+        //                         withReuseIdentifier: Constants.sectionHeaderIdentifier)
+
+    }
+
+    
+    // UITableViewDataSource methods
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.items.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ActivityViewCell", for: indexPath) as! ActivityViewCell
+        let item = self.items[indexPath.row]
+        
+        // Configure the cell with data
+        cell.configure(with: item.activity, image: UIImage(named: "item.imageName")) // Assuming you have a configure method in your cell
+        
+        return cell
+    }
+    
+    // UITableViewDelegate methods for header view
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ActivityCollectionViewHeader") as! ActivityCollectionViewHeader
+        
+        // Configure the header with data
+        // header.configure(with: yourData) // Assuming you have a configure method in your header
+        
+        return header
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 60.0 // Set the height for the header view
+    }
+}
+    
