@@ -27,6 +27,28 @@ class ActivityViewCell: UITableViewCell {
         return imageView
     }()
     
+    let verticalLine: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .gray // Set the color of the line
+        view.layer.cornerRadius = 2 // Set the border radius
+        view.layer.masksToBounds = true
+        return view
+    }()
+
+    let timeLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = .gray
+        return label
+    }()
+    
+    let containerView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     // Initializer
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -39,25 +61,46 @@ class ActivityViewCell: UITableViewCell {
     
     // Setup UI components
     private func setupViews() {
-        contentView.addSubview(activityLabel)
         contentView.addSubview(activityImageView)
+        contentView.addSubview(verticalLine)
+        contentView.addSubview(containerView)
+
+        containerView.addSubview(activityLabel)
+        containerView.addSubview(timeLabel)
+
+        // Constraints for verticalLine
+        verticalLine.autoSetDimensions(to: CGSize(width: 5, height: 50))
+        verticalLine.autoPinEdge(toSuperviewEdge: .leading, withInset: 16)
+        verticalLine.autoAlignAxis(toSuperviewAxis: .horizontal)
         
-        // Add constraints
-        NSLayoutConstraint.activate([
-            activityImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            activityImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            activityImageView.widthAnchor.constraint(equalToConstant: 40),
-            activityImageView.heightAnchor.constraint(equalToConstant: 40),
-            
-            activityLabel.leadingAnchor.constraint(equalTo: activityImageView.trailingAnchor, constant: 16),
-            activityLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            activityLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
-        ])
+        // Constraints for activityImageView
+        activityImageView.autoPinEdge(.leading, to: .trailing, of: verticalLine, withOffset: 8)
+        activityImageView.autoPinEdge(toSuperviewEdge: .top, withInset: 8)
+        activityImageView.autoPinEdge(toSuperviewEdge: .bottom, withInset: 8)
+        activityImageView.autoAlignAxis(toSuperviewAxis: .horizontal)
+        activityImageView.autoSetDimensions(to: CGSize(width: 40, height: 40))
+
+         // Constraints for containerView
+        containerView.autoPinEdge(.leading, to: .trailing, of: activityImageView, withOffset: 8)
+        containerView.autoPinEdge(toSuperviewEdge: .trailing, withInset: 16)
+        containerView.autoAlignAxis(toSuperviewAxis: .horizontal)
+
+        // Constraints for activityLabel
+        activityLabel.autoPinEdge(toSuperviewEdge: .top)
+        activityLabel.autoPinEdge(toSuperviewEdge: .leading)
+        activityLabel.autoPinEdge(toSuperviewEdge: .trailing)
+        
+        // Constraints for timeLabel
+        timeLabel.autoPinEdge(.top, to: .bottom, of: activityLabel, withOffset: 4)
+        timeLabel.autoPinEdge(toSuperviewEdge: .leading)
+        timeLabel.autoPinEdge(toSuperviewEdge: .trailing)
+        timeLabel.autoPinEdge(toSuperviewEdge: .bottom)
     }
     
     // Configure cell with data
     func configure(with activity: String, image: UIImage?) {
         activityLabel.text = activity
         activityImageView.image = image
+        timeLabel.text = "0h14 AM"
     }
 }

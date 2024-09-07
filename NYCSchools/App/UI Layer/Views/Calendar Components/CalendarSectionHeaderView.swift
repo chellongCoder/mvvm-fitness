@@ -7,12 +7,12 @@
 
 import Foundation
 import UIKit
-class ActivityCollectionViewHeader: UICollectionReusableView {
+class ActivityCollectionViewHeader: UITableViewHeaderFooterView {
     private struct Constants {
-        static let edgeInsetsTitle = UIEdgeInsets(top: 5,
+        static let edgeInsetsTitle = UIEdgeInsets(top: 0,
                                              left: 10,
                                              bottom: 5,
-                                             right: 5)
+                                             right: 10)
         static let leftInset: CGFloat = 10
         static let topInset: CGFloat = 10
         static let rightInset: CGFloat = 10
@@ -25,13 +25,16 @@ class ActivityCollectionViewHeader: UICollectionReusableView {
     
     var headerLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 18)
+        label.font = UIFont(name: "HelveticaNeue-Bold", size: 18)
+        label.textColor = .black
         return label
     }()
 
     var headerSubLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16)
+        label.textColor = .gray
+        label.textAlignment = .right
         return label
     }()
     
@@ -39,41 +42,43 @@ class ActivityCollectionViewHeader: UICollectionReusableView {
         let view = UIView(forAutoLayout: ())
         return view
     }()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupViews()
-    }
-    
+
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+      fatalError("init(coder:) has not been implemented")
     }
-    
+
+  override init(reuseIdentifier: String?) {
+    super.init(reuseIdentifier: reuseIdentifier)
+    self.setupViews()
+  }
+  
+
     private func setupWrapperView() {
         addSubview(wrapperView)
         wrapperView.autoPinEdgesToSuperviewEdges(with: Constants.edgeInsetsTitle)
     }
     
     private func setupTitleLabel() {
-        wrapperView.addSubview(headerLabel)
-        headerLabel.autoPinEdge(toSuperviewEdge: .leading,
-                              withInset: Constants.leftInset)
-        headerLabel.autoPinEdge(toSuperviewEdge: .trailing,
-                              withInset: Constants.rightInset)
-        headerLabel.autoPinEdge(toSuperviewEdge: .top,
-                              withInset: Constants.topInset)
-        headerLabel.autoAlignAxis(toSuperviewAxis: .horizontal)
-
+      wrapperView.addSubview(headerLabel)
+      headerLabel.text = "Today"
+      headerLabel.autoPinEdge(toSuperviewEdge: .leading,
+                            withInset: Constants.leftInset)
+      headerLabel.autoPinEdge(toSuperviewEdge: .top,
+                            withInset: Constants.topInset)
+      headerLabel.autoPinEdge(toSuperviewEdge: .bottom, withInset: Constants.bottomInset)
+      headerLabel.autoAlignAxis(toSuperviewAxis: .horizontal)
+      headerLabel.autoSetDimension(.width, toSize: 100) // Set the width for headerLabel
     }
     
     private func setupSubTitleLabel() {
         wrapperView.addSubview(headerSubLabel)
         // Add constraints for headerSubLabel using PureLayout
         headerSubLabel.autoPinEdge(.leading, to: .trailing, of: headerLabel, withOffset: 8)
-        headerSubLabel.autoPinEdge(toSuperviewEdge: .trailing, withInset: 16)
+        headerSubLabel.autoPinEdge(toSuperviewEdge: .trailing, withInset: Constants.rightInset)
         headerSubLabel.autoAlignAxis(toSuperviewAxis: .horizontal)
-
-        
+        headerSubLabel.autoPinEdge(toSuperviewEdge: .top,
+                            withInset: Constants.topInset)
+        headerSubLabel.text = "3 activities"
     }
     
     private func setupViews() {

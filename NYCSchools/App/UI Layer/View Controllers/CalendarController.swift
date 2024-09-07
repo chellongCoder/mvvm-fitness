@@ -17,7 +17,7 @@ class CalendarController: UIViewController {
     }
     // Data source array
     var items: [ActivityItem] = [] // Populate this array with your data
-    private var collectionViewHeightConstraint: NSLayoutConstraint!
+    var collectionViewHeightConstraint: NSLayoutConstraint!
 
     private struct Constants {
         static let cellIdentifier: String = "activityCell"
@@ -40,15 +40,18 @@ class CalendarController: UIViewController {
         items = [
             ActivityItem(activity: "Running", imageName: "running_icon"),
             ActivityItem(activity: "Swimming", imageName: "swimming_icon"),
+            ActivityItem(activity: "Cycling", imageName: "cycling_icon"),
+            ActivityItem(activity: "Running", imageName: "running_icon"),
+            ActivityItem(activity: "Swimming", imageName: "swimming_icon"),
+            ActivityItem(activity: "Cycling", imageName: "cycling_icon"),
+            ActivityItem(activity: "Running", imageName: "running_icon"),
+            ActivityItem(activity: "Swimming", imageName: "swimming_icon"),
             ActivityItem(activity: "Cycling", imageName: "cycling_icon")
         ]
         
         setupHeaderView()
         setupCalendarView()
         setupListView()
-
-        // Calculate and set the height of the collectionView
-        updateCollectionViewHeight()
 
     }
     
@@ -66,7 +69,11 @@ class CalendarController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-        
+    override func viewDidLayoutSubviews() {
+         super.viewDidLayoutSubviews()
+         updateCollectionViewHeight()
+     }
+
     @objc func goBack() {
         self.navigationController?.popViewController(animated: true)
     }
@@ -147,12 +154,11 @@ extension CalendarController: UICollectionViewDataSource, UICollectionViewDelega
         // Create collection view
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = .red
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "dayOfWeekCell")
-
+        
         view.addSubview(collectionView)
         
         // Add constraints
@@ -161,11 +167,18 @@ extension CalendarController: UICollectionViewDataSource, UICollectionViewDelega
             collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+
         collectionViewHeightConstraint = collectionView.heightAnchor.constraint(equalToConstant: 0)
         collectionViewHeightConstraint.isActive = true
+        updateCollectionViewHeight()
 
+    }
+
+    func updateCollectionViewHeight() {
+        collectionView.layoutIfNeeded()
+        let contentHeight = collectionView.collectionViewLayout.collectionViewContentSize.height
+        collectionViewHeightConstraint.constant = contentHeight
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -176,7 +189,7 @@ extension CalendarController: UICollectionViewDataSource, UICollectionViewDelega
          if section == 0 {
              return 7 // Days of the week
          } else {
-             return 42 // 6 weeks * 7 days
+             return 31 // max days in month
          }
      }
     
@@ -186,6 +199,7 @@ extension CalendarController: UICollectionViewDataSource, UICollectionViewDelega
             let dayOfWeekLabel = UILabel(frame: cell.contentView.bounds)
             dayOfWeekLabel.textAlignment = .center
             dayOfWeekLabel.font = UIFont.systemFont(ofSize: 14)
+            dayOfWeekLabel.textColor = .placeholderText
             dayOfWeekLabel.text = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][indexPath.item]
             cell.contentView.addSubview(dayOfWeekLabel)
             return cell
@@ -211,19 +225,46 @@ extension CalendarController: UICollectionViewDataSource, UICollectionViewDelega
                 
                 // Highlight today's date
                 if calendar.isDateInToday(calendar.date(byAdding: .day, value: day - 1, to: startOfMonth)!) {
-                    cell.backgroundColor = .red
+                    cell.backgroundColor = .secondarySystemBackground
                 }
             } else {
-                dayLabel.text = ""
+                dayLabel.text = "31"
+                dayLabel.textColor = .placeholderText
             }
             
             cell.contentView.addSubview(dayLabel)
+           
             return cell
         }
     }
+
+        
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+      if section == 0 {
+        return 0
+      } else {
+        return 5
+      }
+    }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+      if section == 0 {
+        return 0
+      } else {
+        return 5
+      }
+    }
+    
+      // UICollectionViewDelegateFlowLayout methods
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+      if section == 0 {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+      } else {
+        return UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+      }
+    }
+
     // MARK: - UICollectionViewDelegateFlowLayout
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.width / 7
         if indexPath.section == 0 {
@@ -237,32 +278,23 @@ extension CalendarController: UICollectionViewDataSource, UICollectionViewDelega
 }
 
 extension CalendarController : UITableViewDataSource, UITableViewDelegate{
-    private func updateCollectionViewHeight() {
-        let totalHeight = Constants.cellHeight * CGFloat(items.count)
-        collectionViewHeightConstraint.constant = totalHeight
-        view.layoutIfNeeded()
-    }
 
     private func setupListView()  {
         // Create list view
         listView = UITableView()
-        listView.translatesAutoresizingMaskIntoConstraints = false
+        listView.translatesAutoresizingMaskIntoConstraints = true
         listView.dataSource = self
         listView.delegate = self
         listView.register(ActivityViewCell.self, forCellReuseIdentifier: "ActivityViewCell")
+        listView.register(ActivityCollectionViewHeader.self, forHeaderFooterViewReuseIdentifier: "ActivityCollectionViewHeader")
+
         view.addSubview(listView)
-        
+
         // Add constraints
-        listView.autoPinEdge(.top, to: .bottom, of: collectionView, withOffset: 8)
+        listView.autoPinEdge(.top, to: .bottom, of: collectionView, withOffset: 0)
         listView.autoPinEdge(toSuperviewEdge: .leading)
         listView.autoPinEdge(toSuperviewEdge: .trailing)
         listView.autoPinEdge(toSuperviewEdge: .bottom)
-        
-        // collectionView.register(SchoolCollectionViewCell.self,
-        //                         forCellWithReuseIdentifier: Constants.cellIdentifier)
-        // collectionView.register(ActivityCollectionViewHeader.self,
-        //                         forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-        //                         withReuseIdentifier: Constants.sectionHeaderIdentifier)
 
     }
 
@@ -277,23 +309,24 @@ extension CalendarController : UITableViewDataSource, UITableViewDelegate{
         let item = self.items[indexPath.row]
         
         // Configure the cell with data
-        cell.configure(with: item.activity, image: UIImage(named: "item.imageName")) // Assuming you have a configure method in your cell
+        cell.configure(with: item.activity, image: UIImage(named: "check-circle")) // Assuming you have a configure method in your cell
         
         return cell
     }
-    
     // UITableViewDelegate methods for header view
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ActivityCollectionViewHeader") as! ActivityCollectionViewHeader
-        
+        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ActivityCollectionViewHeader") as? ActivityCollectionViewHeader else {
+            fatalError("Unable to dequeue ActivityCollectionViewHeader")
+        }
+
         // Configure the header with data
         // header.configure(with: yourData) // Assuming you have a configure method in your header
-        
+
         return header
     }
-    
+
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 60.0 // Set the height for the header view
+        return 50.0 // Set the height for the header view
     }
 }
     
