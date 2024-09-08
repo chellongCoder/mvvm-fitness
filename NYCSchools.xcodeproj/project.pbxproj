@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18639D362C8D83CB009D3C25 /* EmailInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18639D352C8D83CB009D3C25 /* EmailInputView.swift */; };
+		18639D382C8D83EC009D3C25 /* AddActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18639D372C8D83EC009D3C25 /* AddActivityController.swift */; };
+		18639D3B2C8D8782009D3C25 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18639D3A2C8D8782009D3C25 /* NavigationBarView.swift */; };
+		18639D3D2C8D9F92009D3C25 /* InputLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18639D3C2C8D9F92009D3C25 /* InputLinkView.swift */; };
+		18639D3F2C8DA051009D3C25 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18639D3E2C8DA051009D3C25 /* VideoView.swift */; };
+		18639D412C8E1187009D3C25 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18639D402C8E1187009D3C25 /* StoreManager.swift */; };
+		18639D432C8E11AB009D3C25 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18639D422C8E11AB009D3C25 /* CustomButtonView.swift */; };
 		2C4196F728A18B55009379A1 /* DataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4196F628A18B55009379A1 /* DataError.swift */; };
 		2C4196FA28A18F85009379A1 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4196F928A18F85009379A1 /* School.swift */; };
 		2C7C4C8B289890F400860F05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7C4C8A289890F400860F05 /* AppDelegate.swift */; };
@@ -64,6 +71,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18639D352C8D83CB009D3C25 /* EmailInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailInputView.swift; sourceTree = "<group>"; };
+		18639D372C8D83EC009D3C25 /* AddActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityController.swift; sourceTree = "<group>"; };
+		18639D3A2C8D8782009D3C25 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
+		18639D3C2C8D9F92009D3C25 /* InputLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputLinkView.swift; sourceTree = "<group>"; };
+		18639D3E2C8DA051009D3C25 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
+		18639D402C8E1187009D3C25 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		18639D422C8E11AB009D3C25 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		2BD29FA934322713674DCE1E /* Pods-NYCSchools-NYCSchoolsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYCSchools-NYCSchoolsUITests.release.xcconfig"; path = "Target Support Files/Pods-NYCSchools-NYCSchoolsUITests/Pods-NYCSchools-NYCSchoolsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2C4196F628A18B55009379A1 /* DataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataError.swift; sourceTree = "<group>"; };
 		2C4196F928A18F85009379A1 /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
@@ -141,6 +155,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18639D392C8D876D009D3C25 /* Add Activity Components */ = {
+			isa = PBXGroup;
+			children = (
+				18639D352C8D83CB009D3C25 /* EmailInputView.swift */,
+				18639D3A2C8D8782009D3C25 /* NavigationBarView.swift */,
+				18639D3C2C8D9F92009D3C25 /* InputLinkView.swift */,
+				18639D3E2C8DA051009D3C25 /* VideoView.swift */,
+				18639D422C8E11AB009D3C25 /* CustomButtonView.swift */,
+			);
+			path = "Add Activity Components";
+			sourceTree = "<group>";
+		};
 		2C4196F828A18F68009379A1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +277,7 @@
 				2C7C4C8E289890F400860F05 /* SchoolsCollectionViewController.swift */,
 				2CFCEB2828A6E4BF00B892F4 /* SchoolDetailsViewController.swift */,
 				DEE36D742C89B5A000856DE3 /* CalendarController.swift */,
+				18639D372C8D83EC009D3C25 /* AddActivityController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -258,6 +285,7 @@
 		2C7C4CBF289DC0C400860F05 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				18639D392C8D876D009D3C25 /* Add Activity Components */,
 				DEE36D762C8AB0AC00856DE3 /* Calendar Components */,
 				2CFCEB1F28A4A6F700B892F4 /* SchoolCollectionViewCell.swift */,
 				2CFCEB2128A5EE3B00B892F4 /* SchoolsSectionHeaderView.swift */,
@@ -301,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				2CCD9A2628A4637B00FAE7A5 /* StringsHelper.swift */,
+				18639D402C8E1187009D3C25 /* StoreManager.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -592,19 +621,26 @@
 				2C4196F728A18B55009379A1 /* DataError.swift in Sources */,
 				2C4196FA28A18F85009379A1 /* School.swift in Sources */,
 				2CA789FA28A2F0D000274FE8 /* SchoolsViewModel.swift in Sources */,
+				18639D412C8E1187009D3C25 /* StoreManager.swift in Sources */,
 				DEE36D782C8AB0CE00856DE3 /* CalendarSectionHeaderView.swift in Sources */,
 				2C7C4C8F289890F400860F05 /* SchoolsCollectionViewController.swift in Sources */,
 				2C8C995228A8C83A00DDB59A /* SchoolListStateView.swift in Sources */,
+				18639D3B2C8D8782009D3C25 /* NavigationBarView.swift in Sources */,
 				2CFCEB2928A6E4BF00B892F4 /* SchoolDetailsViewController.swift in Sources */,
+				18639D3F2C8DA051009D3C25 /* VideoView.swift in Sources */,
 				DEE36D7A2C8B05B900856DE3 /* ActivityViewCell.swift in Sources */,
 				2C84BA1D28A9BC61005AAD38 /* SchoolSATDetailsCollectionViewCell.swift in Sources */,
 				2C7C4C8B289890F400860F05 /* AppDelegate.swift in Sources */,
+				18639D362C8D83CB009D3C25 /* EmailInputView.swift in Sources */,
 				2CCD9A2728A4637B00FAE7A5 /* StringsHelper.swift in Sources */,
+				18639D432C8E11AB009D3C25 /* CustomButtonView.swift in Sources */,
 				2CFCEB2228A5EE3B00B892F4 /* SchoolsSectionHeaderView.swift in Sources */,
 				DEE36D752C89B5A000856DE3 /* CalendarController.swift in Sources */,
 				2CFCEB2D28A6E5A100B892F4 /* SchoolDetailsViewModel.swift in Sources */,
 				2CF32AF128AA125C00FA5AD8 /* SchoolDetailsMapCollectionViewCell.swift in Sources */,
 				2CFCEB2528A5F6DB00B892F4 /* SchoolSection.swift in Sources */,
+				18639D3D2C8D9F92009D3C25 /* InputLinkView.swift in Sources */,
+				18639D382C8D83EC009D3C25 /* AddActivityController.swift in Sources */,
 				2CFCEB2028A4A6F700B892F4 /* SchoolCollectionViewCell.swift in Sources */,
 				2CB6931C28A380B0007E46D8 /* SchoolListLoadState.swift in Sources */,
 				2CFCEB2B28A6E55800B892F4 /* SchoolDetailsCollectionViewCell.swift in Sources */,

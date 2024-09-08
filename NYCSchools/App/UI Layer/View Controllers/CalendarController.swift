@@ -52,6 +52,8 @@ class CalendarController: UIViewController {
         setupHeaderView()
         setupCalendarView()
         setupListView()
+        setupFloatingButton()
+
 
     }
     
@@ -327,6 +329,42 @@ extension CalendarController : UITableViewDataSource, UITableViewDelegate{
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50.0 // Set the height for the header view
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            items.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+        }
+    }
+}
+
+extension CalendarController {
+    @objc func goToAddNewActivity() {
+        let addNewActivityVC = AddActivityController()
+
+      self.navigationController?.pushViewController(addNewActivityVC, animated: true)
+    }
+
+    private func setupFloatingButton() {
+        let floatingButton = UIButton(type: .custom)
+        floatingButton.translatesAutoresizingMaskIntoConstraints = false
+        floatingButton.backgroundColor = .systemBlue // Set the background color
+        floatingButton.setTitle("+", for: .normal) // Set the title
+        floatingButton.setTitleColor(.white, for: .normal) // Set the title color
+        floatingButton.titleLabel?.font = UIFont.systemFont(ofSize: 24) // Set the font size
+        floatingButton.layer.cornerRadius = 30 // Set the corner radius to make it circular
+        floatingButton.layer.masksToBounds = true
+        floatingButton.addTarget(self, action: #selector(goToAddNewActivity), for: .touchUpInside)
+
+        view.addSubview(floatingButton)
+        
+        // Constraints for floatingButton
+        floatingButton.autoSetDimensions(to: CGSize(width: 60, height: 60)) // Set the size of the button
+        floatingButton.autoPinEdge(toSuperviewEdge: .bottom, withInset: 16)
+        floatingButton.autoPinEdge(toSuperviewEdge: .trailing, withInset: 16)
     }
 }
     
