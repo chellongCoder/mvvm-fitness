@@ -10,8 +10,11 @@ import Foundation
 import SwiftUI
 
 struct InputLinkView: View {
-  @State private var link: String = ""
+  @Binding var link: String
 
+  public func getLink() -> String {
+    return link
+  }
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             Text("Youtube link")
@@ -21,6 +24,9 @@ struct InputLinkView: View {
           TextField("", text: $link)
                 .font(.system(size: 16))
                 .foregroundColor(Color(red: 0.04, green: 0.04, blue: 0.04))
+                .onReceive(link.publisher) {
+                    print("link $0, \(link) \($0)")
+                }
         }
         .padding(.horizontal, 17)
         .padding(.vertical, 9)

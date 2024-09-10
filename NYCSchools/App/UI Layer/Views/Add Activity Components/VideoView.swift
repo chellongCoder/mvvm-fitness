@@ -24,26 +24,34 @@ struct WebView: UIViewRepresentable {
 }
 
 struct VideoPlayerContent: View {
-    let url = URL(string: "https://youtu.be/Wlf1T5nrO50")!
+    let url = URL(string: "https://youtu.be/Wlf1T5nrO50&autoplay=1")!
+    @Binding var ytLink: String
 
     var body: some View {
-      VStack{
-          WebView(url: url)
-                .frame(height: 300) // Adjust the height as needed
-
-
+      let isValidYt = self.ytLink.isValidYouTubeLink()
+      if(isValidYt) {
+        VStack{
+            WebView(url: URL(string: ytLink+"&autoplay=1")!)
+                  .frame(height: 300) // Adjust the height as needed
+        }
+      } else {
+        WebView(url: url)
+          .frame(height: 300).opacity(0.0) // Adjust the height as needed
       }
     }
 }
 
-struct VideoPlayerView: View {
-    var body: some View {
-      VideoPlayerContent()
-    }
+class ObservableSlider: ObservableObject {
+    @Published public var value: Double = 0.0
 }
 
-struct VideoPlayerView_Previews: PreviewProvider {
-    static var previews: some View {
-        VideoPlayerView()
+struct VideoPlayerView: View {
+    @Binding var ytLink: String
+    @ObservedObject var observableSlider: ObservableSlider = ObservableSlider()
+
+    var body: some View {
+      VideoPlayerContent(ytLink: $ytLink)
     }
+ 
 }
+

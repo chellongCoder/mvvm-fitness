@@ -234,8 +234,26 @@ extension CalendarController: UICollectionViewDataSource, UICollectionViewDelega
                 dayLabel.textColor = .placeholderText
             }
             
+            // Create the icon image view
+            let iconImageView = UIImageView(image: UIImage(systemName: "calendar")) // Use your desired icon
+            iconImageView.translatesAutoresizingMaskIntoConstraints = false
+            iconImageView.contentMode = .scaleAspectFit
+            iconImageView.tintColor = .systemYellow
+
+
             cell.contentView.addSubview(dayLabel)
            
+            // Add the icon image view to the cell's content view
+            cell.contentView.addSubview(iconImageView)
+
+           // Set up constraints
+            NSLayoutConstraint.activate([
+                iconImageView.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 0),
+                iconImageView.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: -0),
+                iconImageView.widthAnchor.constraint(equalToConstant: 16), // Adjust the size as needed
+                iconImageView.heightAnchor.constraint(equalToConstant: 16) // Adjust the size as needed
+            ])
+            
             return cell
         }
     }

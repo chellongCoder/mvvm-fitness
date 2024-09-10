@@ -8,14 +8,25 @@
 import Foundation
 import UIKit
 import SwiftUI
+import Combine
 
 class AddActivityController: UIViewController {
   private var email: String = ""
+  private var ytLink: String = "" {
+    didSet {
+      self.updateSlider()
+    }
+  }
+
+  var videoController: UIHostingController<VideoPlayerView>!
+
+  var observableSlider:ObservableSlider = ObservableSlider()
+  private var cancellables: Set<AnyCancellable> = []
 
   private var emailInputView: EmailInputView!
   private let headerView = NavigationBarView()
-  private let inputLinkView = InputLinkView()
-  private let videoView = VideoPlayerView()
+  private var inputLinkView: InputLinkView!
+  private var videoView: VideoPlayerView!
   private var buttonView: CustomButtonView? = nil
 
  private let actionButton: UIButton = {
@@ -48,9 +59,22 @@ class AddActivityController: UIViewController {
       get: { self.email },
       set: { self.email = $0 }
     ))
+    inputLinkView = InputLinkView(link: Binding(
+      get: { self.ytLink },
+      set: { self.ytLink = $0 }
+    ))
+    videoView = VideoPlayerView(ytLink: Binding(
+      get: { self.ytLink },
+      set: { self.ytLink = $0 }
+    ))
     buttonView = CustomButtonView(onClick: { [weak self] in
       let email = self?.email
       print("email: \(email ?? "")")
+      self?.updateSlider()
+      guard let isValidYt = self?.ytLink.isValidYouTubeLink() else {
+        return
+      }
+
     })
 
     setupEmailInputView()
@@ -72,11 +96,15 @@ class AddActivityController: UIViewController {
   }
 
 
+  func updateSlider() {
+      observableSlider.value = 8.5
+  }
+
    private func setupEmailInputView() {
      let hostingController = UIHostingController(rootView: headerView)
      let emailController = UIHostingController(rootView: emailInputView)
      let linkController = UIHostingController(rootView: inputLinkView)
-     let videoController = UIHostingController(rootView: videoView)
+     videoController = UIHostingController(rootView: videoView)
      let buttonController = UIHostingController(rootView: buttonView)
 
      addChild(hostingController)
@@ -90,6 +118,7 @@ class AddActivityController: UIViewController {
      view.addSubview(videoController.view)
      view.addSubview(buttonController.view)
 
+     self.observableSlider.$value.assign(to: \.observableSlider.value, on: self.videoController.rootView).store(in:&self.cancellables)
 
      hostingController.view.translatesAutoresizingMaskIntoConstraints = false
      emailController.view.translatesAutoresizingMaskIntoConstraints = false
@@ -119,7 +148,6 @@ class AddActivityController: UIViewController {
          videoController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
 
 
-
           // ActionButton constraints
          buttonController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
          buttonController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
@@ -127,7 +155,5 @@ class AddActivityController: UIViewController {
      ])
 
      hostingController.didMove(toParent: self)
-
-     
    }
 }
