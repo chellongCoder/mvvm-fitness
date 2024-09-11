@@ -830,8 +830,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VDXKAYGU93;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NYCSchools/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We would like to show your location when viewing school location";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We would like to show your location when viewing school location";
+				INFOPLIST_KEY_NSLocationUsageDescription = "We would like to show your location when viewing school location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We would like to show your location when viewing school location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -843,7 +849,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = RolanMarat.NYCSchools;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.longnn.fitness-logging";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -859,8 +865,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VDXKAYGU93;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NYCSchools/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We would like to show your location when viewing school location";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We would like to show your location when viewing school location";
+				INFOPLIST_KEY_NSLocationUsageDescription = "We would like to show your location when viewing school location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We would like to show your location when viewing school location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -872,7 +884,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = RolanMarat.NYCSchools;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.longnn.fitness-logging";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -927,6 +939,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VDXKAYGU93;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = RolanMarat.NYCSchoolsUITests;
@@ -945,6 +958,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VDXKAYGU93;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = RolanMarat.NYCSchoolsUITests;
