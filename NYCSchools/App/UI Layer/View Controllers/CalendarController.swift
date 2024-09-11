@@ -16,7 +16,7 @@ class CalendarController: UIViewController {
         let imageName: String
     }
     // Data source array
-    var items: [ActivityItem] = [] // Populate this array with your data
+    var items: [ExerciseModel] = [] // Populate this array with your data
     var collectionViewHeightConstraint: NSLayoutConstraint!
 
     private struct Constants {
@@ -37,18 +37,11 @@ class CalendarController: UIViewController {
         view.backgroundColor = .white
         
         // Populate the items array
-        items = [
-            ActivityItem(activity: "Running", imageName: "running_icon"),
-            ActivityItem(activity: "Swimming", imageName: "swimming_icon"),
-            ActivityItem(activity: "Cycling", imageName: "cycling_icon"),
-            ActivityItem(activity: "Running", imageName: "running_icon"),
-            ActivityItem(activity: "Swimming", imageName: "swimming_icon"),
-            ActivityItem(activity: "Cycling", imageName: "cycling_icon"),
-            ActivityItem(activity: "Running", imageName: "running_icon"),
-            ActivityItem(activity: "Swimming", imageName: "swimming_icon"),
-            ActivityItem(activity: "Cycling", imageName: "cycling_icon")
-        ]
-        
+        let userDefault = UserDefaultsManager.shared
+          // Create an array of ExerciseModel objects
+        let exerciseModels = userDefault.getObjects()
+        items = exerciseModels
+
         setupHeaderView()
         setupCalendarView()
         setupListView()
@@ -58,10 +51,13 @@ class CalendarController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-            super.viewWillAppear(animated)
-            
-            // Hide the default navigation bar
-            self.navigationController?.setNavigationBarHidden(true, animated: animated)
+      super.viewWillAppear(animated)
+      
+      // Hide the default navigation bar
+      self.navigationController?.setNavigationBarHidden(true, animated: animated)
+
+      reloadItems()
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -69,12 +65,24 @@ class CalendarController: UIViewController {
         
         // Show the navigation bar on other view controllers
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        // Reload items and update UI
     }
     
     override func viewDidLayoutSubviews() {
          super.viewDidLayoutSubviews()
          updateCollectionViewHeight()
-     }
+    }
+
+    private func reloadItems() {
+        let userDefault = UserDefaultsManager.shared
+        let exerciseModels = userDefault.getObjects()
+        items = exerciseModels.sorted { $0.createdAt > $1.createdAt }
+        
+        // Update the UI, e.g., reload table view or collection view
+        // Assuming you have a tableView or collectionView
+        self.listView.reloadData()
+//        self.collectionView.reloadData()
+    }
 
     @objc func goBack() {
         self.navigationController?.popViewController(animated: true)
@@ -329,8 +337,8 @@ extension CalendarController : UITableViewDataSource, UITableViewDelegate{
         let item = self.items[indexPath.row]
         
         // Configure the cell with data
-        cell.configure(with: item.activity, image: UIImage(named: "check-circle")) // Assuming you have a configure method in your cell
-        
+        cell.configure(with: item.exerciseName, time: item.createdAt.toString(), image: UIImage(named: "check-circle")) // Assuming you have a configure method in your cell
+
         return cell
     }
     // UITableViewDelegate methods for header view

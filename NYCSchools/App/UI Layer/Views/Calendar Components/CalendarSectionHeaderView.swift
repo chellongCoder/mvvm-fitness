@@ -60,7 +60,7 @@ class ActivityCollectionViewHeader: UITableViewHeaderFooterView {
     
     private func setupTitleLabel() {
       wrapperView.addSubview(headerLabel)
-      headerLabel.text = "Today"
+      headerLabel.text = "Monthly"
       headerLabel.autoPinEdge(toSuperviewEdge: .leading,
                             withInset: Constants.leftInset)
       headerLabel.autoPinEdge(toSuperviewEdge: .top,
@@ -78,7 +78,7 @@ class ActivityCollectionViewHeader: UITableViewHeaderFooterView {
         headerSubLabel.autoAlignAxis(toSuperviewAxis: .horizontal)
         headerSubLabel.autoPinEdge(toSuperviewEdge: .top,
                             withInset: Constants.topInset)
-        headerSubLabel.text = "3 activities"
+      headerSubLabel.text = "\(UserDefaultsManager.shared.getObjects().count) activities"
     }
     
     private func setupViews() {

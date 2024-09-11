@@ -98,9 +98,9 @@ class ActivityViewCell: UITableViewCell {
     }
     
     // Configure cell with data
-    func configure(with activity: String, image: UIImage?) {
+  func configure(with activity: String, time: String, image: UIImage?) {
         activityLabel.text = activity
         activityImageView.image = image
-        timeLabel.text = "0h14 AM"
+        timeLabel.text = time
     }
 }
