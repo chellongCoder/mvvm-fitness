@@ -15,6 +15,7 @@
 		18639D412C8E1187009D3C25 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18639D402C8E1187009D3C25 /* StoreManager.swift */; };
 		18639D432C8E11AB009D3C25 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18639D422C8E11AB009D3C25 /* CustomButtonView.swift */; };
 		18639D452C90C544009D3C25 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18639D442C90C544009D3C25 /* DateHelper.swift */; };
+		18639D472C91FCD4009D3C25 /* SelectDateTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18639D462C91FCD4009D3C25 /* SelectDateTimeView.swift */; };
 		2C4196F728A18B55009379A1 /* DataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4196F628A18B55009379A1 /* DataError.swift */; };
 		2C4196FA28A18F85009379A1 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4196F928A18F85009379A1 /* School.swift */; };
 		2C7C4C8B289890F400860F05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7C4C8A289890F400860F05 /* AppDelegate.swift */; };
@@ -80,6 +81,7 @@
 		18639D402C8E1187009D3C25 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		18639D422C8E11AB009D3C25 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		18639D442C90C544009D3C25 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		18639D462C91FCD4009D3C25 /* SelectDateTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDateTimeView.swift; sourceTree = "<group>"; };
 		2BD29FA934322713674DCE1E /* Pods-NYCSchools-NYCSchoolsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYCSchools-NYCSchoolsUITests.release.xcconfig"; path = "Target Support Files/Pods-NYCSchools-NYCSchoolsUITests/Pods-NYCSchools-NYCSchoolsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2C4196F628A18B55009379A1 /* DataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataError.swift; sourceTree = "<group>"; };
 		2C4196F928A18F85009379A1 /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				18639D3C2C8D9F92009D3C25 /* InputLinkView.swift */,
 				18639D3E2C8DA051009D3C25 /* VideoView.swift */,
 				18639D422C8E11AB009D3C25 /* CustomButtonView.swift */,
+				18639D462C91FCD4009D3C25 /* SelectDateTimeView.swift */,
 			);
 			path = "Add Activity Components";
 			sourceTree = "<group>";
@@ -648,6 +651,7 @@
 				2CFCEB2028A4A6F700B892F4 /* SchoolCollectionViewCell.swift in Sources */,
 				2CB6931C28A380B0007E46D8 /* SchoolListLoadState.swift in Sources */,
 				2CFCEB2B28A6E55800B892F4 /* SchoolDetailsCollectionViewCell.swift in Sources */,
+				18639D472C91FCD4009D3C25 /* SelectDateTimeView.swift in Sources */,
 				2C84BA1B28A9BA95005AAD38 /* SchoolSAT.swift in Sources */,
 				2CF32AF328AA12D000FA5AD8 /* SchoolMapAnnotation.swift in Sources */,
 				2CE02BA428A17F65009C94FA /* SchoolDirectoryAPI.swift in Sources */,
@@ -833,6 +837,7 @@
 				DEVELOPMENT_TEAM = VDXKAYGU93;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NYCSchools/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Fitness logging";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We would like to show your location when viewing school location";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We would like to show your location when viewing school location";
@@ -868,6 +873,7 @@
 				DEVELOPMENT_TEAM = VDXKAYGU93;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NYCSchools/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Fitness logging";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We would like to show your location when viewing school location";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We would like to show your location when viewing school location";

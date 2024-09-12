@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class ActivityViewCell: UITableViewCell {
-    
+    var ytLink = ""
     // Define UI components
     let activityLabel: UILabel = {
         let label = UILabel()
@@ -30,7 +30,7 @@ class ActivityViewCell: UITableViewCell {
     let verticalLine: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .gray // Set the color of the line
+        view.backgroundColor = .systemGray // Set the color of the line
         view.layer.cornerRadius = 2 // Set the border radius
         view.layer.masksToBounds = true
         return view
@@ -49,6 +49,17 @@ class ActivityViewCell: UITableViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+
+    var iconYTView: UIImageView = {
+      let imageView = UIImageView()
+      imageView.translatesAutoresizingMaskIntoConstraints = false
+      imageView.contentMode = .scaleAspectFill
+      imageView.clipsToBounds = true
+      imageView.image = UIImage(systemName: "airplayvideo")
+      imageView.tintColor = .black
+      imageView.isUserInteractionEnabled = true
+      return imageView
+    }()
     // Initializer
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -64,9 +75,12 @@ class ActivityViewCell: UITableViewCell {
         contentView.addSubview(activityImageView)
         contentView.addSubview(verticalLine)
         contentView.addSubview(containerView)
+        
+        contentView.addSubview(iconYTView)
 
         containerView.addSubview(activityLabel)
         containerView.addSubview(timeLabel)
+
 
         // Constraints for verticalLine
         verticalLine.autoSetDimensions(to: CGSize(width: 5, height: 50))
@@ -82,7 +96,6 @@ class ActivityViewCell: UITableViewCell {
 
          // Constraints for containerView
         containerView.autoPinEdge(.leading, to: .trailing, of: activityImageView, withOffset: 8)
-        containerView.autoPinEdge(toSuperviewEdge: .trailing, withInset: 16)
         containerView.autoAlignAxis(toSuperviewAxis: .horizontal)
 
         // Constraints for activityLabel
@@ -95,12 +108,31 @@ class ActivityViewCell: UITableViewCell {
         timeLabel.autoPinEdge(toSuperviewEdge: .leading)
         timeLabel.autoPinEdge(toSuperviewEdge: .trailing)
         timeLabel.autoPinEdge(toSuperviewEdge: .bottom)
+
+        // Add constraints for iconYTView using PureLayout
+        iconYTView.autoPinEdge(.leading, to: .trailing, of: containerView, withOffset: 8)
+        iconYTView.autoPinEdge(toSuperviewEdge: .trailing, withInset: 10)
+        iconYTView.autoAlignAxis(toSuperviewAxis: .horizontal)
+        iconYTView.autoPinEdge(toSuperviewEdge: .top, withInset: 10)
+        iconYTView.autoSetDimensions(to: CGSize(width: 40, height: 40))
+
+        // Add tap gesture recognizer to the label
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(labelTapped))
+        iconYTView.addGestureRecognizer(tapGesture)
+
+    }
+
+    @objc func labelTapped() {
+        if let url = URL(string: ytLink) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
     
     // Configure cell with data
-  func configure(with activity: String, time: String, image: UIImage?) {
-        activityLabel.text = activity
-        activityImageView.image = image
-        timeLabel.text = time
+    func configure(with activity: String, time: String, ytLink: String, image: UIImage?) {
+      activityLabel.text = activity
+      activityImageView.image = image
+      timeLabel.text = time
+      self.ytLink = ytLink
     }
 }

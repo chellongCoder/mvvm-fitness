@@ -26,13 +26,13 @@ class UserDefaultsManager {
 
     private init() {
         // Create mock data array
-        let mockExerciseData: [ExerciseModel] = [
-            ExerciseModel(exerciseName: "Push Up", ytLink: "https://youtube.com/pushup", createdAt: Date()),
-            ExerciseModel(exerciseName: "Squat", ytLink: "https://youtube.com/squat", createdAt: Date()),
-            ExerciseModel(exerciseName: "Plank", ytLink: "https://youtube.com/plank", createdAt: Date()),
-            ExerciseModel(exerciseName: "Lunge", ytLink: "https://youtube.com/lunge", createdAt: Date()),
-            ExerciseModel(exerciseName: "Burpee", ytLink: "https://youtube.com/burpee", createdAt: Date())
-        ]
+//        let mockExerciseData: [ExerciseModel] = [
+//            ExerciseModel(exerciseName: "Push Up", ytLink: "https://youtube.com/pushup", createdAt: Date()),
+//            ExerciseModel(exerciseName: "Squat", ytLink: "https://youtube.com/squat", createdAt: Date()),
+//            ExerciseModel(exerciseName: "Plank", ytLink: "https://youtube.com/plank", createdAt: Date()),
+//            ExerciseModel(exerciseName: "Lunge", ytLink: "https://youtube.com/lunge", createdAt: Date()),
+//            ExerciseModel(exerciseName: "Burpee", ytLink: "https://youtube.com/burpee", createdAt: Date())
+//        ]
 //      self.pushObjects(mockExerciseData)
     }
 
@@ -62,7 +62,7 @@ class UserDefaultsManager {
 
     // Method to retrieve the array of objects
     func getObjects() -> [ExerciseModel] {
-      var userData: [ExerciseModel]!
+      var userData: [ExerciseModel] = []
       if let data = UserDefaults.standard.value(forKey: key) as? Data {
           userData = try! PropertyListDecoder().decode([ExerciseModel].self, from: data)
           return userData

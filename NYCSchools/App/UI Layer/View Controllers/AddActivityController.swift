@@ -73,7 +73,7 @@ class AddActivityController: UIViewController {
       guard let isValidYt = self?.ytLink.isValidYouTubeLink() else {
         return
       }
-      let item = ExerciseModel(exerciseName: email ?? "Untitled", ytLink: "https://youtube.com/pushup", createdAt: Date())
+      let item = ExerciseModel(exerciseName: email ?? "Untitled", ytLink: self?.ytLink ?? "", createdAt: Date())
       UserDefaultsManager.shared.pushObject(item)
 
       // Show toast message

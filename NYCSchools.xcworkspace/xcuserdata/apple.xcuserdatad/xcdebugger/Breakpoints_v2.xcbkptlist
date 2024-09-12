@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1541C373-DBF7-4D90-B194-2E1E0318BE55"
+            uuid = "DDB1FC69-8386-4D30-8C85-EE58B580CC6E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NYCSchools/App/Utility/StoreManager.swift"
+            filePath = "NYCSchools/App/UI Layer/Views/Calendar Components/ActivityViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "pushObject(_:)"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "labelTapped()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

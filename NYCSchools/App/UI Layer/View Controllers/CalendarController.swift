@@ -77,7 +77,7 @@ class CalendarController: UIViewController {
         let userDefault = UserDefaultsManager.shared
         let exerciseModels = userDefault.getObjects()
         items = exerciseModels.sorted { $0.createdAt > $1.createdAt }
-        
+
         // Update the UI, e.g., reload table view or collection view
         // Assuming you have a tableView or collectionView
         self.listView.reloadData()
@@ -242,12 +242,26 @@ extension CalendarController: UICollectionViewDataSource, UICollectionViewDelega
                 dayLabel.textColor = .placeholderText
             }
             
-            // Create the icon image view
-            let iconImageView = UIImageView(image: UIImage(systemName: "calendar")) // Use your desired icon
-            iconImageView.translatesAutoresizingMaskIntoConstraints = false
-            iconImageView.contentMode = .scaleAspectFit
-            iconImageView.tintColor = .systemYellow
+            let items = self.items
 
+            // Create the icon image view
+            var iconImageView = UIImageView(image: UIImage(systemName: "")) // Use your desired icon
+            iconImageView.translatesAutoresizingMaskIntoConstraints = false
+            iconImageView.contentMode = .center
+
+
+            if items.contains(where: {
+              let date = calendar.dateComponents([.day, .month, .year], from: $0.createdAt)
+              return date.day == day
+            }) {
+               // it exists, do something
+              iconImageView = UIImageView(image: UIImage(named: "check-circle")?.withTintColor(.systemGreen)) // Use your desired icon
+
+              let currentDate = calendar.dateComponents([.day, .month, .year], from: Date())
+              if(currentDate.day == day) {
+                iconImageView = UIImageView(image: UIImage(named: "calendar-plus")?.withTintColor(.systemYellow)) // Use your desired icon
+              }
+            }
 
             cell.contentView.addSubview(dayLabel)
            
@@ -261,7 +275,9 @@ extension CalendarController: UICollectionViewDataSource, UICollectionViewDelega
                 iconImageView.widthAnchor.constraint(equalToConstant: 16), // Adjust the size as needed
                 iconImageView.heightAnchor.constraint(equalToConstant: 16) // Adjust the size as needed
             ])
-            
+
+            iconImageView.autoSetDimensions(to: CGSize(width: 16, height: 16))
+
             return cell
         }
     }
@@ -307,6 +323,12 @@ extension CalendarController: UICollectionViewDataSource, UICollectionViewDelega
 
 extension CalendarController : UITableViewDataSource, UITableViewDelegate{
 
+    func isSameDay(_ date1: Date, _ date2: Date) -> Bool {
+        let calendar = Calendar.current
+        let components1 = calendar.dateComponents([.day, .month, .year], from: date1)
+        let components2 = calendar.dateComponents([.day, .month, .year], from: date2)
+        return components1.day == components2.day && components1.month == components2.month && components1.year == components2.year
+    }
     private func setupListView()  {
         // Create list view
         listView = UITableView()
@@ -335,10 +357,14 @@ extension CalendarController : UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ActivityViewCell", for: indexPath) as! ActivityViewCell
         let item = self.items[indexPath.row]
-        
+        if isSameDay(item.createdAt, Date()) {
+            print("The exercise was created in the past.")
+          cell.configure(with: item.exerciseName, time: item.createdAt.toString(), ytLink: item.ytLink, image: UIImage(named: "calendar-plus")?.withTintColor(.systemYellow)) // Assuming you have a configure method in your cell
+        } else {
+            print("The exercise was created in the future.")
+          cell.configure(with: item.exerciseName, time: item.createdAt.toString(),ytLink: item.ytLink, image: UIImage(named: "check-circle")?.withTintColor(.systemGreen)) // Assuming you have a configure method in your cell
+        }
         // Configure the cell with data
-        cell.configure(with: item.exerciseName, time: item.createdAt.toString(), image: UIImage(named: "check-circle")) // Assuming you have a configure method in your cell
-
         return cell
     }
     // UITableViewDelegate methods for header view
@@ -361,6 +387,7 @@ extension CalendarController : UITableViewDataSource, UITableViewDelegate{
         if editingStyle == .delete {
             items.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            UserDefaultsManager.shared.pushObjects(items)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }

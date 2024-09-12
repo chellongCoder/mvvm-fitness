@@ -78,7 +78,7 @@ class ActivityCollectionViewHeader: UITableViewHeaderFooterView {
         headerSubLabel.autoAlignAxis(toSuperviewAxis: .horizontal)
         headerSubLabel.autoPinEdge(toSuperviewEdge: .top,
                             withInset: Constants.topInset)
-      headerSubLabel.text = "\(UserDefaultsManager.shared.getObjects().count) activities"
+        headerSubLabel.text = "\(UserDefaultsManager.shared.getObjects().count) activities"
     }
     
     private func setupViews() {
